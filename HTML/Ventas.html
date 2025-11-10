@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regalería París - Ventas</title>
+    <link rel="stylesheet" href="css/styleVentas.css"> <!-- Enlaza el archivo CSS -->
+    <link rel="icon" href="icono/icono.png" type="image/x-icon"> <!-- Icono -->
+</head>
+<body>
+
+<!-- Encabezado -->
+<header>
+    <h1>Regalería París</h1>
+</header>
+
+<!-- Botón para volver a la página principal -->
+<a href="Principal.html" class="back-button">Volver</a>
+
+<!-- Interfaz de ventas -->
+<div class="ventas-form">
+    <h2>Realizar Venta</h2>
+
+    <!-- Buscar producto por nombre, ID o código de barras -->
+    <label for="search">Buscar producto:</label>
+    <input type="text" id="search" placeholder="Nombre, ID producto o Código de Barras">
+
+    <!-- Tabla para mostrar productos -->
+    <table class="product-table">
+        <thead>
+        <tr>
+            <th>Nombre del Producto</th>
+            <th>ID Producto</th>
+            <th>Código de Barras</th>
+            <th>Precio Unitario</th>
+        </tr>
+        </thead>
+        <tbody id="product-list">
+        <!-- Aquí se agregarán los productos dinámicamente -->
+        </tbody>
+    </table>
+
+    <!-- Mostrar el total -->
+    <div class="total-row">
+        Total: $<span id="total">0.00</span>
+    </div>
+
+    <!-- Botón para agregar un producto -->
+    <button class="add-product-button">Agregar Producto</button>
+</div>
+
+</body>
+</html>

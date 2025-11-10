@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'Calinastiya'; /* Cambia este nombre por el nombre que le quieras dar */
+    src: url('../fuentesweb/Calinastiya.ttf') format('truetype'); /* Asegúrate de poner la ruta correcta */
+}
+@font-face {
+    font-family: 'Amarillo';
+    src: url('../fuentesweb/Amarillo.ttf') format('truetype');
+}
+
+/* Reset de márgenes y rellenos */
+* {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: 'Calinastiya', sans-serif;
+    background-color: white;
+    text-align: center;
+    background-image: url('OIG4city.jpg'); /* Tu imagen */
+    background-size: cover; /* Mantiene la relación de aspecto y cubre el área */
+    background-position: center; /* Centra la imagen */
+}
+
+
+header h1 {
+     font-family: 'Amarillo', sans-serif;
+    border-bottom: 40px solid pink; /* Línea rosa debajo del título */
+    text-align: left; /* Alinear el texto a la izquierda */
+    font-size: 48px; /* Cambiar el tamaño de la fuente */
+    margin-top: 60px; /* Añadir margen inferior si es necesario */
+   /*  margin: 0; /* Eliminar todos los márgenes */
+    padding: 0; /* Eliminar todos los rellenos */
+    line-height: 0.5; /* Ajustar la altura de línea para eliminar espacio adicional */
+    background-color: white;
+}
+
+.container {
+ font-family: 'Calinastiya';
+    max-width: 400px; /* Ajustar el ancho del contenedor */
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #000; /* Marco negro */
+    border-radius: 30px; /* Bordes redondeados */
+    box-shadow: 0 10px 15px rgba(0, 2, 0, 1.1); /* Sombra suave */
+}
+
+h2 {
+    font-size: 55px;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Estilo para el menú */
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.menu ul li {
+    margin-bottom: 15px; /* Espaciado entre botones */
+}
+.menu ul li a {
+    text-decoration: none;
+    font-size: 50px; /* Aumentar el tamaño de la fuente */
+    color: black;
+    padding: 8px 20px; /* Ajustar el relleno para mayor comodidad */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    /*align-items: center; /* Centrar verticalmente el contenido */
+    border: 2px solid black; /* Bordes negros */
+    background-color: #fff; /* Color de fondo blanco */
+    border-radius: 50px; /* Bordes redondeados tipo píldora */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra externa */
+    transition: background-color 0.3s ease; /* Transición suave para el fondo */
+    line-height: 1; /* Ajustar la altura de línea para el texto */
+    /*position: relative; /* Esto permitirá que los puntos se posicionen mejor */
+}
+
+/* Añadir iconos tipo círculo en la izquierda */
+.menu ul li a::before {
+  font-family: 'Amarillo', sans-serif'';
+    content: "•"; /* Primer círculo (rosa) */
+    font-size: 27px; /* Tamaño del primer círculo */
+    color: #ff69b4; /* Color del primer punto (rosa) */
+    margin-right: 5px; /* Separación entre el primer punto y el texto */
+   /* display: inline-block; /* Asegura que el contenido esté en línea */
+    /*line-height: 1; /* Ajustar la altura de línea para centrarlo mejor */
+    /*position: relative;   */
+    /*top: 3px; /* Ajustar para alinear con el otro punto */
+    align-self: center;
+}
+
+/* Añadir el segundo círculo (negro) a la izquierda, dentro del <b> */
+.menu ul li b::before {
+   font-family: 'Amarillo', sans-serif;
+    content: "•"; /* Segundo círculo (negro) */
+    font-size: 27px; /* Tamaño del segundo círculo */
+    color: black; /* Color del segundo punto (negro) */
+    margin-right: 5px; /* Separación entre el círculo negro y el texto */
+    /*display: inline-block; /* Asegura que el contenido esté en línea */
+    /*line-height: -1; /* Ajustar la altura de línea para centrarlo mejor */
+    /*position: relative;*/
+    /*top: 3px; /* Ajustar para alinearlo con el otro punto */
+    /*align-self: center;*/
+}
+
+
+.menu ul li a:hover {
+    background-color: pink; /* Cambiar fondo al pasar el ratón */
+    color: white;
+    border-color: #ff69b4;
+}
