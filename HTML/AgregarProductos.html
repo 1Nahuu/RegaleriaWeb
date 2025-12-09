@@ -50,14 +50,14 @@
 
 
         const producto = {
-            nombre: nombre,
-            codigoBarra: codigoBarra,
-            precio: precio,
-            cantidad: cantidad
+            id: codigoBarra,
+              name: nombre,
+            price: precio,
+            stock: cantidad
         };
 
 
-        fetch('http://localhost:8080/agregar', {
+        fetch('http://localhost:8080/productos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
