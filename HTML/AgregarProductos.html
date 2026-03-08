@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Productos - Regaleria Paris</title>
+    <link rel="stylesheet" href="css/StyleAgregar.css">
+    <link rel="icon" href="icono/icono.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <h1>Agregar Productos</h1>
+</header>
+
+<a href="Principal.html" class="back-button">Volver</a>
+
+<div class="container">
+    <h2>Ingrese los datos del producto</h2>
+    <form id="agregarProductoForm">
+        <div class="form-group">
+            <label for="nombre">Nombre del Producto:</label>
+            <input type="text" id="nombre" name="nombre" required placeholder="Ejemplo: Juguete">
+        </div>
+        <div class="form-group">
+            <label for="codigoBarra">Código de Barras:</label>
+            <input type="text" id="codigoBarra" name="codigoBarra" required placeholder="Ejemplo: 1234567890123">
+        </div>
+        <div class="form-group">
+            <label for="precio">Precio Unitario:</label>
+            <input type="number" id="precio" name="precio" step="0.01" required placeholder="Ejemplo: 99.99">
+        </div>
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" name="cantidad" required placeholder="Ejemplo: 30">
+        </div>
+        <button type="submit" class="boton-animado">Agregar Producto</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('agregarProductoForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const codigoBarra = document.getElementById('codigoBarra').value;
+        const precio = parseFloat(document.getElementById('precio').value);
+        const cantidad = parseInt(document.getElementById('cantidad').value);
+
+        const Producto = {
+            id: codigoBarra,
+            name: nombre,
+            price: precio,
+            stock: cantidad
+        };
+
+
+
+        fetch('http://localhost:8080/productos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Producto)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+</body>
+</html>
