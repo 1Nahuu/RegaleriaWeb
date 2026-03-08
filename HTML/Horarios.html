@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agregar Productos - Regaleria Paris</title>
+    <link rel="stylesheet" href="css/StyleHorarios.css">
+    <link rel="icon" href="icono/icono.png" type="image/x-icon">
+</head>
+<body>
+
+<header>
+    <h1>Agregar Productos</h1>
+</header>
+
+<a href="Principal.html" class="back-button">Volver</a>
+
+
+	<div class="tabla-turnos">
+  		<table border="1">
+    			<thead>
+      				<tr>
+        				<th>Nombre</th>
+        				<th id="dias"></th>
+      				</tr>
+    			</thead>
+    			<tbody id="tabla-body">
+    			</tbody>
+  		</table>
+
+
+</div>
+<script>
+const nombres = ["Juan", "María", "Pedro", "Lucía"];
+const diasDelMes = 30; // cambiar según el mes
+const turnos = ["M", "T", "F"]; // Mañana, Tarde, Franco
+
+// Crear encabezado de días
+const diasHeader = document.getElementById("dias");
+for (let i = 1; i <= diasDelMes; i++) {
+  const th = document.createElement("th");
+  th.textContent = i;
+  diasHeader.parentNode.appendChild(th);
+}
+diasHeader.remove();
+
+// Crear filas con turnos
+const tabla = document.getElementById("tabla-body");
+
+nombres.forEach((nombre, index) => {
+  const fila = document.createElement("tr");
+
+ const tdNombre = document.createElement("td");
+tdNombre.textContent = nombre;
+tdNombre.classList.add("nombre");
+fila.appendChild(tdNombre);
+
+
+const patron = [
+"M","M","M","M","M","M",
+"F",
+"T","T","T","T","T","T",
+"F"
+];
+	 // desplazamiento del patrón
+  let offset = index < 2 ? 0 : 7;
+
+  for (let d = 0; d < diasDelMes; d++) {
+    const td = document.createElement("td");
+
+    const turno = patron[(d + offset) % patron.length];
+
+    td.textContent = turno;
+    td.classList.add(turno); // agrega clase M T o F
+
+    fila.appendChild(td);
+  }
+
+  tabla.appendChild(fila);
+});
+
+td.textContent = turno;
+td.classList.add(turno);
+</script>
+
+
+
+<script>
+    document.getElementById('agregarProductoForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const nombre = document.getElementById('nombre').value;
+        const codigoBarra = document.getElementById('codigoBarra').value;
+        const precio = parseFloat(document.getElementById('precio').value);
+        const cantidad = parseInt(document.getElementById('cantidad').value);
+
+        const Producto = {
+            id: codigoBarra,
+            name: nombre,
+            price: precio,
+            stock: cantidad
+        };
+
+
+
+        fetch('http://localhost:8080/productos', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(Producto)
+        })
+        .then(response => response.text())
+        .then(data => {
+            alert(data);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    });
+</script>
+
+</body>
+</html>
