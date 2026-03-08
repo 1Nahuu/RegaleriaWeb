@@ -1,0 +1,215 @@
+@font-face {
+    font-family: 'Calinastiya'; /* Cambia este nombre por el nombre que le quieras dar */
+    src: url('../fuentesweb/Calinastiya.ttf') format('truetype'); /* Asegúrate de poner la ruta correcta */
+}
+@font-face {
+    font-family: 'Amarillo';
+    src: url('../fuentesweb/Amarillo.ttf') format('truetype');
+}
+
+body {
+    font-family: 'Calinastiya', sans-serif;
+    background-color: white;
+    text-align: center;
+    background-image: url('OIG4city.jpg'); /* Imagen de fondo */
+    background-size: cover; /* Mantiene la relación de aspecto y cubre el área */
+    background-position: center; /* Centra la imagen */
+    color: black; /* Color del texto */
+}
+
+
+
+header h1 {
+    font-family: 'Amarillo', sans-serif;
+    border-bottom: 60px solid pink; /* Línea rosa debajo del título */
+    text-align: left; /* Alinear el texto a la izquierda */
+    font-size: 48px; /* Cambiar el tamaño de la fuente */
+    margin-top: 60px; /* Añadir margen superior */
+    padding: 0; /* Eliminar todos los rellenos */
+    line-height: 0.5; /* Ajustar la altura de línea */
+    background-color: white;
+}
+
+/* Estilos para el botón de volver a la página principal */
+.back-button {
+   font-family: 'Calinastiya', sans-serif;
+    text-decoration: none;
+    font-size: 70px; /* Ajustar el tamaño de la fuente */
+    color: black;
+    padding: 8px 20px; /* Relleno para mayor comodidad */
+    display: flex; /* Usar flexbox para alinear los elementos */
+    align-items: center; /* Centrar verticalmente el contenido */
+    border: 2px solid black; /* Bordes negros */
+    background-color: #fff; /* Fondo blanco */
+    border-radius: 50px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra externa */
+    transition: background-color 0.3s ease; /* Transición suave */
+    line-height: 1; /* Ajustar altura de línea */
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+}
+
+.back-button:hover {
+    background-color: pink; /* Cambiar el color de fondo al pasar el mouse */
+    color: white; /* Cambiar color del texto */
+    border-color: #ff69b4; /* Cambiar el color del borde */
+}
+
+.container {
+    max-width: 600px; /* Ancho máximo del contenedor */
+    margin: 50px auto; /* Centrar el contenedor */
+    padding: 20px; /* Espaciado interno */
+    background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente */
+    border: 1px solid #000; /* Borde negro */
+    border-radius: 30px; /* Bordes redondeados */
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Sombra más suave */
+}
+
+h2 {
+    font-size: 70px; /* Tamaño del subtítulo */
+    margin-bottom: 20px; /* Espacio debajo del subtítulo */
+}
+
+.form-group {
+    margin-bottom: 15px; /* Espacio entre campos */
+}
+
+label {
+    display: block; /* Hace que las etiquetas ocupen el ancho completo */
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+    font-weight: bold; /* Negrita para las etiquetas */
+    font-size: 50px; /* Tamaño de la fuente */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 90%; /* Ocupa todo el ancho disponible */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 20px; /* Tamaño de la fuente */
+    transition: border 0.3s ease; /* Transición suave para el borde */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #ff69b4; /* Borde rosa al enfocar */
+}
+
+.btn-agregar {
+    background-color: #ff69b4; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 50px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 20px; /* Tamaño de la fuente */
+    /*transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.boton-animado {
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    background-color:White /*#ff69b4;  Color de fondo del botón */
+    color: Black; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    /*border: none; Sin borde */
+ 	border: 2px solid black; /* Bordes negros */
+    border-radius: 50px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 50px; /* Tamaño de la fuente */
+   	/*border-radius: 6px;*/
+ 	font-family: "Calinastiya"
+}
+
+.boton-animado:hover {
+     background-color: Pink; /* Cambiar el color de fondo al pasar el mouse */
+    color: White; /* Cambiar color del texto */
+    border-color: #ff69b4; /* Cambiar el color del borde */
+}
+
+.boton-animado:active {
+    transform: scale(0.93);
+    background-color: #FF00FF; /* cambia a un tono más oscuro (opcional) */
+}
+
+
+
+
+
+
+
+
+.tabla-turnos{
+    width: 90%;
+    margin: 40px auto;
+    border-radius: 20px;
+    background: #e6e6e6;
+    box-shadow: 0px 10px 25px rgba(0,0,0,0.2);
+
+}
+.tabla-turnos table{
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+	//table-layout: fixed;   /* evita que el navegador cambie el ancho */
+}
+
+.tabla-turnos th{		//Numeros del mees
+    background-color: #d9d9d9;
+    font-weight: bold;
+	font-size: 15px;
+    padding: 2px 2px;
+
+}	
+
+.tabla-turnos td{	//Nombres y turnos M,T,F
+    width: 100px;
+    height: 30px;
+    font-weight: bold;
+ padding: 2px 10px;
+    border: 1px solid #888;
+
+}
+
+
+
+.nombre{
+	 width: 100px;
+
+    font-size: 35px;
+    font-weight: 600;
+    padding: 4px 6px;
+
+}
+
+
+
+
+.M{
+	font-family: "Segoe UI", Tahoma, sans-serif;
+   	color: Black;
+    background-color: lightpink;
+    border-radius: 4px;
+
+
+}
+
+/* Turno Tarde */
+.T{
+	font-family: "Segoe UI", Tahoma, sans-serif;
+   	color: Black;
+    background-color: #e2889b;
+    border-radius: 4px;
+
+}
+
+/* Franco */
+.F{
+	font-family: "Segoe UI", Tahoma, sans-serif;
+   	color: red;
+    background-color: yellow;
+    border-radius: 4px;
+
+}
