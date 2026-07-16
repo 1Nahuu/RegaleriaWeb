@@ -1,10 +1,25 @@
 package com.regaleria.RegaleriaParis.domain;
 
+
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
+import jakarta.validation.constraints.PositiveOrZero;
+
 public class Producto {
     private Integer id;
+
+    @NotBlank(message = "El nombre no puede estar vacío")
     private String nombre;
+
+
+    @Positive(message = "El precio debe ser mayor a cero")
     private Double precio;
+
+    @PositiveOrZero(message = "La cantidad no puede ser negativa")
     private Integer cantidad;
+
+
 
 
     public Producto() {
