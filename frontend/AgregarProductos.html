@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agregar Productos - Regaleria Paris</title>
     <link rel="stylesheet" href="css/StyleAgregar.css">
-    <link rel="icon" href="icono/icono.png" type="image/x-icon">
+    <link rel="icon" href="icono.png" type="image/x-icon">
 </head>
 <body>
 
@@ -34,7 +34,7 @@
             <label for="cantidad">Cantidad:</label>
             <input type="number" id="cantidad" name="cantidad" required placeholder="Ejemplo: 30">
         </div>
-        <button type="submit" class="btn-agregar">Agregar Producto</button>
+        <button type="submit" class="boton-animado">Agregar Producto</button>
     </form>
 </div>
 
@@ -42,27 +42,26 @@
     document.getElementById('agregarProductoForm').addEventListener('submit', function(event) {
         event.preventDefault();
 
-
         const nombre = document.getElementById('nombre').value;
         const codigoBarra = document.getElementById('codigoBarra').value;
         const precio = parseFloat(document.getElementById('precio').value);
         const cantidad = parseInt(document.getElementById('cantidad').value);
 
-
-        const producto = {
-            nombre: nombre,
-            codigoBarra: codigoBarra,
-            precio: precio,
-            cantidad: cantidad
+        const Producto = {
+            id: codigoBarra,
+            name: nombre,
+            price: precio,
+            stock: cantidad
         };
 
 
-        fetch('http://localhost:8080/agregar', {
+
+        fetch('http://localhost:8080/productos', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify(producto)
+            body: JSON.stringify(Producto)
         })
         .then(response => response.text())
         .then(data => {
@@ -76,3 +75,4 @@
 
 </body>
 </html>
+

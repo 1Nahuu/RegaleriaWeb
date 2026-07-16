@@ -42,6 +42,7 @@ header h1 {
     border: 1px solid #000; /* Marco negro */
     border-radius: 30px; /* Bordes redondeados */
     box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); /* Sombra suave */
+
 }
 
 h2 {
@@ -113,26 +114,21 @@ h2 {
 }
 
 /* Tabla para productos */
-.product-table {
-    font-size: 50px;
+.product-table table{
     width: 100%;
     border-collapse: collapse;
-    margin-bottom: 20px;
 }
 
-.product-table th, .product-table td {
-    border: 1px solid #ddd;
-    padding: 10px;
-    text-align: left;
+.product-table th,
+.product-table td{
+    border: 1px solid #444;
+    padding: 8px;
+    text-align: center;
 }
 
-.product-table th {
-    background-color: #f4f4f4;
-    color: black;
-}
-
-.product-table td {
-    color: #333;
+.product-table th{
+    background-color: #f2f2f2;
+    font-weight: bold;
 }
 
 .product-table td input {
@@ -151,17 +147,55 @@ h2 {
 
 /* Estilo del botón para agregar producto */
 .add-product-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff69b4;
-    border: none;
-    color: white;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
+    transition: transform 0.15s ease, background-color 0.15s ease;
+    background-color:White /*#ff69b4;  Color de fondo del botón */
+    color: Black; /* Color del texto */
+    padding: 10px 20px; /* Espaciado interno */
+    /*border: none; Sin borde */
+ 	border: 2px solid black; /* Bordes negros */
+     border-radius: 10px;  /*Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el ratón */
+    font-size: 50px; /* Tamaño de la fuente */
+   	/*border-radius: 6px;*/
+   	align="center";
+ 	font-family: "Calinastiya";
 }
 
 .add-product-button:hover {
-    background-color: #ff3385;
+   background-color: Pink; /* Cambiar el color de fondo al pasar el mouse */
+    color: White; /* Cambiar color del texto */
+    border-color: #ff69b4; /* Cambiar el color del borde */
 }
 
+
+.add-product-button:active {
+    transform: scale(0.93);
+    background-color: #FF00FF; /* cambia a un tono más oscuro (opcional) */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+}
+
+label {
+    display: block; /* Hace que las etiquetas ocupen el ancho completo */
+    margin-bottom: 5px; /* Espacio entre la etiqueta y el campo de entrada */
+    font-weight: bold; /* Negrita para las etiquetas */
+    font-size: 50px; /* Tamaño de la fuente */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 90%; /* Ocupa todo el ancho disponible */
+    padding: 10px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 5px; /* Bordes redondeados */
+    font-size: 20px; /* Tamaño de la fuente */
+    transition: border 0.3s ease; /* Transición suave para el borde */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #ff69b4; /* Borde rosa al enfocar */
+}
