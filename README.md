@@ -26,7 +26,5 @@ El backend actualmente usa una **lista en memoria** como almacenamiento (no pers
 ## Próximos pasos
 - Conexión a base de datos real (Spring Data JPA)
 - Sistema de login / autenticación
- 
- -Manejo de errores centralizado (`@ControllerAdvice`)
- 
- -Deploy del backend a un servicio en la nube (Render/Railway)
+- Manejo de errores centralizado (`@ControllerAdvice`)
+- Deploy del backend a un servicio en la nube (Render/Railway)
